@@ -1,2 +1,3 @@
 # gha-udemy
-Repository for playing with GitHub Actions
+Repository for playing with GitHub Actions.
+
