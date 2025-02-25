@@ -1,0 +1,17 @@
+name: Mi Workflow
+
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Job 1
+        run: echo "Este es el Job 1"
+
+  job2:
+    needs: job1  # Espera a que 'job1' termine antes de ejecutarse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Job 2
+        run: echo "Este es el Job 2"
