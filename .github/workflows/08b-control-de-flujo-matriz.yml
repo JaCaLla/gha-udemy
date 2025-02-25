@@ -16,6 +16,7 @@ jobs:
             - os: ubuntu-22.04
               version: 20
     runs-on: ${{ matrix.os }}
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -27,6 +28,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - name: Forzar fallo
+        run: exit 1
+      - name: Todo OK
         if: ${{ success() }}
         run: echo "Se ve si pasos anteriores han sido OK"
       - name: Houston, tenemos un problema
